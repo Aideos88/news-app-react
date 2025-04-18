@@ -10,8 +10,7 @@ const Categories = ({ categories, setSelectedCategory, selectedCategory }) => {
                 All
             </button>
 
-            {categories.map(category => {
-
+            {categories.map((category) => {
                 return (
                     <button
                         onClick={() => setSelectedCategory(category)}
