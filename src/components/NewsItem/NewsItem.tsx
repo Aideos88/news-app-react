@@ -1,7 +1,12 @@
 import { formatTimeAgo } from "../../helpers/formatTimeAgo";
+import { INews } from "../../interfaces";
 import styles from './styles.module.css'
 
-const NewsItem = ({ item }) => {
+interface Props {
+    item: INews;
+}
+
+const NewsItem = ({ item }: Props) => {
     return (
         <li className={styles.item}>
             <div
@@ -11,7 +16,7 @@ const NewsItem = ({ item }) => {
             <div className={styles.info}>
                 <h3 className={styles.title}>{item.title}</h3>
                 <p className={styles.extra}>
-                    {formatTimeAgo(new Date(item.published))} by {item.author}
+                    {formatTimeAgo(item.published)} by {item.author}
                 </p>
             </div>
 
